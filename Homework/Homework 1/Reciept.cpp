@@ -1,15 +1,13 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 int days;
 float booking = 19.99;
 float day_price = 29.99;
 float tax = 0.10;
-float paid;
-float subtotal;
-float total;
+float paid, subtotal, total, change_due;
 std::string name;
-float change_due;
 
 void error();
 float calculate(float booking, float day_price, int days);
@@ -36,6 +34,8 @@ int main() {
 
     subtotal = calculate(booking, day_price, days);
     total = subtotal + (subtotal * tax); 
+
+    std::cout << std::fixed << std::setprecision(2);
     std::cout << "Your total is: $" << total << std::endl;
 
     std::cout << "How much would you like to pay?" << std::endl;
@@ -65,6 +65,8 @@ float change(float paid, float total) {
 }
 
 void receipt(std::string name, float subtotal, int days, float total, float paid, float change_due) {
+    std::cout << std::fixed << std::setprecision(2);
+
     std::cout << "\n---------- RECEIPT ----------";
     std::cout << "NAME: " << name << std::endl;
     std::cout << "# NIGHTS: " << days << std::endl;
@@ -77,3 +79,4 @@ void receipt(std::string name, float subtotal, int days, float total, float paid
     std::cout << "CHANGE DUE: $" << change_due << std::endl;
     std::cout << "\n----------THANK YOU FOR RENTING WITH US ----------\n";
 }
+
