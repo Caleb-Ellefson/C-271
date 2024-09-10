@@ -36,6 +36,7 @@ int main() {
     total = subtotal + (subtotal * tax); 
 
     std::cout << std::fixed << std::setprecision(2);
+    
     std::cout << "Your total is: $" << total << std::endl;
 
     std::cout << "How much would you like to pay?" << std::endl;
