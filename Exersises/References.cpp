@@ -6,7 +6,7 @@ void change_value(int& x){
 }
 
 
-void pointer(int * ptr){
+void pointer(int* ptr){
 	*ptr = 5;
 }
 
